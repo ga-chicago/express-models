@@ -1,0 +1,68 @@
+<style>
+  tr{
+    border: 1px solid black;
+  }
+  td{
+    border: 1px solid black;
+  }
+  table{
+    border: 1px solid black;
+  }
+</style>
+
+<h1> WELCOME TO WINES.COM</h1>
+
+<input id="name" placeholder="Name"/>
+<input id="type" placeholder="Type"/>
+<input id="region" placeholder="Region"/>
+<input id="vintage" placeholder="Vintage"/>
+<input id="organic" placeholder="Organic"/>
+<button id="submit">Submit</button><br/><br/>
+<table>
+  <tr>
+    <td>
+      Name
+    </td>
+    <td>
+      Type
+    </td>
+    <td>
+      Region
+    </td>
+    <td>
+      Vintage
+    </td>
+    <td>
+      Organic
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+  {{#each wines}}
+    <tr>
+      <td>
+        {{ this.name }}
+      </td>
+      <td>
+        {{ this.type }}
+      </td>
+      <td>
+        {{ this.region }}
+      </td>
+      <td>
+        {{ this.vintage }}
+      </td>
+      <td>
+        {{ this.organic }}
+      </td>
+      <td>
+        <button>Edit</button>
+      </td>
+      <td>
+        <button id={{this._id}} class="delete">Delete</button>
+      </td>
+    </tr>
+  {{/each}}
+</table>
